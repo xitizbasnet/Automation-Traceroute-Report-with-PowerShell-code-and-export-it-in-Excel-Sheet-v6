@@ -13,33 +13,7 @@
 
 ---
 
-## 📑 Table of Contents
 
-* 📘 Overview
-* 🎯 Purpose
-* 🏢 Business Use Case
-* ⭐ Key Features
-* 🛠️ Prerequisites
-* 📦 Dependencies
-* 🌐 Network Detection Logic
-* 📡 Target Services
-* ⚙️ Script Workflow
-* 🧠 Script Architecture
-* 🚀 Execution Guide
-* 📊 Report Structure
-* 📁 Output
-* 📄 Sample Report
-* 💻 Complete Script
-* 🔍 Code Walkthrough
-* 🔒 Security Considerations
-* ⚡ Performance
-* 🧪 Testing
-* 🐞 Troubleshooting
-* 📝 Operational Notes
-* 🔄 Maintenance
-* 📚 Appendix
-
----
 
 # 📘 Overview
 
@@ -151,84 +125,97 @@ The following cloud services are included in the diagnostic process:
 
 ---
 
-# ⚙️ Script Workflow
-
-```text
-Start
- │
- ▼
-Detect Desktop
- │
- ▼
-Retrieve IPv4 Address
- │
- ▼
-Determine Corporate Network
- │
- ▼
-Validate Dependencies
- │
- ▼
-Install Missing Components (if required)
- │
- ▼
-Launch Parallel Traceroutes
- │
- ▼
-Collect Results
- │
- ▼
-Generate Excel Workbook
- │
- ▼
-Create Individual Worksheets
- │
- ▼
-Write Device Information
- │
- ▼
-Write Traceroute Results
- │
- ▼
-Save Workbook
- │
- ▼
-Remove Background Jobs
- │
- ▼
-Complete
-```
-
----
-
-# 🧠 Script Architecture
-
-```text
-PowerShell Script
-        │
-        ├── Environment Detection
-        ├── Network Identification
-        ├── Dependency Validation
-        ├── Parallel Job Processing
-        ├── Traceroute Collection
-        ├── Excel Workbook Creation
-        └── Report Export
-```
-
----
-
 # 🚀 Execution Guide
 
-1. Open **Windows PowerShell**.
-2. Navigate to the directory containing the script.
+## 🛠️ Step-by-Step Execution Guide
+
+### 1. 📁 Save the Script
+
+Save the PowerShell script file as:
+
+```text
+Traceroute Report.ps1
+```
+
+Ensure the file is stored in a known directory (e.g., Desktop or Documents).
+
+---
+
+### 2. ▶️ Run the Script
+
+You can execute the script using one of the following methods:
+
+#### Option A — Right-click Execution (GUI Method)
+
+* Right-click on `Traceroute Report.ps1`
+* Select **“Run with PowerShell”**
+* The PowerShell window will open and start execution automatically
+
+---
+
+#### Option B — PowerShell Terminal (Recommended)
+
+1. Open **PowerShell**
+2. Navigate to the script location:
+
+```powershell
+cd $env:USERPROFILE\Desktop
+```
+
 3. Run the script:
 
 ```powershell
-.\Automation_Tracert_Report_v6.ps1
+.\Traceroute Report.ps1
 ```
 
-4. Wait for all traceroutes to complete.
-5. Open the generated Excel workbook from your Desktop.
+---
+
+## ⏳ 3. Wait for Execution to Complete
+
+During execution:
+
+* The script will run multiple **traceroute operations in parallel**
+* System and network details will be collected automatically
+* No user interaction is required during processing
+
+> [!NOTE]
+> Execution time may vary depending on network latency and system performance.
+
+---
+
+## 📊 4. Successful Completion Output
+
+Once the script finishes successfully:
+
+* An **Excel (.xlsx) report** will be generated automatically
+* The file will be saved on the **Desktop**
+
+Example output:
+
+```text
+Automation_Tracert_Corporate_Office_Report_July_05_2026.xlsx
+```
+
+---
+
+## 📁 5. View the Report
+
+* Navigate to your **Desktop**
+* Open the generated `.xlsx` file using:
+
+  * Microsoft Excel
+  * LibreOffice Calc (optional)
+  * Any compatible spreadsheet application
+
+---
+
+## ⚠️ Important Notes
+
+> [!WARNING]
+> Do not close the PowerShell window during execution, as this will interrupt traceroute collection.
+
+> [!TIP]
+> If execution fails, try running PowerShell as **Administrator** for better network access permissions.
 
 ---
 
@@ -379,7 +366,7 @@ Automation_Tracert_Corporate_Office_Report_July_05_2026.xlsx
 ```
 
 > [!TIP]
-> The **Complete PowerShell Script** section can be placed below this documentation without modification, ensuring the source code remains identical to the original.
+> The **Complete PowerShell Script** section can be placed below this documentation without modification.
 
 
 # ⚙️Powershell Code
@@ -434,124 +421,4 @@ Write-Host "Report saved to: $ExcelFile"
 Read-Host 'Press Enter to close'
 
 ```
-
----
-
-# 🚀 How to Use the Script
----
-
-## 🛠️ Step-by-Step Execution Guide
-
-### 1. 📁 Save the Script
-
-Save the PowerShell script file as:
-
-```text
-Traceroute Report.ps1
-```
-
-Ensure the file is stored in a known directory (e.g., Desktop or Documents).
-
----
-
-### 2. ▶️ Run the Script
-
-You can execute the script using one of the following methods:
-
-#### Option A — Right-click Execution (GUI Method)
-
-* Right-click on `Traceroute Report.ps1`
-* Select **“Run with PowerShell”**
-* The PowerShell window will open and start execution automatically
-
----
-
-#### Option B — PowerShell Terminal (Recommended)
-
-1. Open **PowerShell**
-2. Navigate to the script location:
-
-```powershell
-cd $env:USERPROFILE\Desktop
-```
-
-3. Run the script:
-
-```powershell
-.\Traceroute Report.ps1
-```
-
----
-
-## ⏳ 3. Wait for Execution to Complete
-
-During execution:
-
-* The script will run multiple **traceroute operations in parallel**
-* System and network details will be collected automatically
-* No user interaction is required during processing
-
-> [!NOTE]
-> Execution time may vary depending on network latency and system performance.
-
----
-
-## 📊 4. Successful Completion Output
-
-Once the script finishes successfully:
-
-* An **Excel (.xlsx) report** will be generated automatically
-* The file will be saved on the **Desktop**
-
-Example output:
-
-```text
-Automation_Tracert_Corporate_Office_Report_July_05_2026.xlsx
-```
-
----
-
-## 📁 5. View the Report
-
-* Navigate to your **Desktop**
-* Open the generated `.xlsx` file using:
-
-  * Microsoft Excel
-  * LibreOffice Calc (optional)
-  * Any compatible spreadsheet application
-
----
-
-## 📄 Report Contents
-
-The Excel file includes:
-
-* 🖥️ Computer Name
-* 👤 Logged-in User
-* 🌐 IP Address
-* 📶 Wi-Fi / Network Name
-* 💻 Operating System
-* 📅 Date & Time
-* 📡 Full Traceroute Results (per service)
-
----
-
-## ⚠️ Important Notes
-
-> [!WARNING]
-> Do not close the PowerShell window during execution, as this will interrupt traceroute collection.
-
-> [!TIP]
-> If execution fails, try running PowerShell as **Administrator** for better network access permissions.
-
----
-
-## 🧾 Summary
-
-In simple terms:
-
-* Save script → Run it → Wait → Get Excel report on Desktop
-
----
-
 
