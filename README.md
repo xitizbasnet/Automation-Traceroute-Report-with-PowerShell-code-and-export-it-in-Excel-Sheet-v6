@@ -224,7 +224,7 @@ PowerShell Script
 3. Run the script:
 
 ```powershell
-.\Automation_Tracert_Report_OptionA_Fast_v6.ps1
+.\Automation_Tracert_Report_v6.ps1
 ```
 
 4. Wait for all traceroutes to complete.
